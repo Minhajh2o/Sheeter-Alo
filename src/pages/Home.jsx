@@ -18,6 +18,15 @@ const Home = () => {
         <MissionStats />
       </section>
 
+      {/* How to help */}
+      <section className="space-y-8">
+        <SectionHeading
+          eyebrow="How to help"
+          title="Three simple steps to send warmth"
+          subtitle="Our micro-components keep the flow effortless so you can focus on generosity."
+        />
+        <HowItWorksGrid />
+      </section>
     </div>
   );
 };
