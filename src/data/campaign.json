@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "title": "Rangpur Fog-Line Layers",
+    "image": "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=60",
+    "description": "Char dwellers along the Teesta are bracing for back-to-back fog alerts; every bundle of quilts and thermal sets keeps a bari warm.",
+    "status": "Urgent",
+    "contactInfo": "+880 1701-224466",
+    "division": "Rangpur",
+    "collectionPoints": ["Rangpur City Hall", "Mithapukur Youth Center"],
+    "needs": ["Quilts", "Thermal Sets", "Woolen Caps"]
+  },
+  {
+    "id": 2,
+    "title": "Rajshahi Padma Night Guard",
+    "image": "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1200&q=60",
+    "description": "Boat schools anchoring on the Padma riverbanks need hoodies, baby wraps, and floor blankets for families displaced by erosion.",
+    "status": "Active",
+    "contactInfo": "+880 1855-442211",
+    "division": "Rajshahi",
+    "collectionPoints": ["Rajshahi College Gate", "Godagari Relief Hub"],
+    "needs": ["Baby Wraps", "Hoodies", "Floor Blankets"]
+  },
+  {
+    "id": 3,
+    "title": "Dhaka Canopy Kids",
+    "image": "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=60",
+    "description": "Street-connected children in Mirpur and Mohammadpur require clean blankets, glove pairs, and ear warmers before midnight temperatures drop.",
+    "status": "Active",
+    "contactInfo": "+880 1998-550077",
+    "division": "Dhaka",
+    "collectionPoints": ["Mirpur DOHS Booth", "Dhanmondi Lake Club"],
+    "needs": ["Blankets", "Gloves", "Ear Warmers"]
+  },
+  {
+    "id": 4,
+    "title": "Chattogram Hill Thermals",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60",
+    "description": "Marma and Chakma villages near Khagrachari are asking for breathable thermals, socks, and rainproof shawls for high-elevation nights.",
+    "status": "Active",
+    "contactInfo": "+880 1550-992211",
+    "division": "Chattogram",
+    "collectionPoints": ["Khagrachari Shilpo Kendra", "Pahartali Scouts Den"],
+    "needs": ["Breathable Thermals", "Wool Socks", "Rainproof Shawls"]
+  },
+  {
+    "id": 5,
+    "title": "Sylhet Tea Garden Shield",
+    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60",
+    "description": "Tea pluckers working sunrise shifts in damp leaf tunnels rely on gumboots, lined raincoats, and hand warmers to avoid chills.",
+    "status": "Fundraising",
+    "contactInfo": "+880 1300-882255",
+    "division": "Sylhet",
+    "collectionPoints": ["Malnichhera Clubhouse", "Sylhet Cadet College Gate"],
+    "needs": ["Lined Raincoats", "Gumboots", "Reusable Hand Warmers"]
+  },
+  {
+    "id": 6,
+    "title": "Khulna Sundarbans Shawls",
+    "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60",
+    "description": "Fisher families docking on the Rupsha rely on heavy shawls, waterproof mittens, and fleece beanies to survive salt-laden winds.",
+    "status": "Active",
+    "contactInfo": "+880 1404-667788",
+    "division": "Khulna",
+    "collectionPoints": ["Rupsha Ferry Terminal", "Boyra Community Center"],
+    "needs": ["Heavy Shawls", "Waterproof Mittens", "Fleece Beanies"]
+  },
+  {
+    "id": 7,
+    "title": "Barishal Delta Blanket Boats",
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=60",
+    "description": "Floating relief boats ferry moisture-wicking blankets, hot water bags, and thermal scarves to Meghna sandbar households.",
+    "status": "Active",
+    "contactInfo": "+880 1722-664488",
+    "division": "Barishal",
+    "collectionPoints": ["Sadar River Port Kiosk", "Bhola Launch Ghat"],
+    "needs": ["Moisture-Wick Blankets", "Hot Water Bags", "Thermal Scarves"]
+  },
+  {
+    "id": 8,
+    "title": "Mymensingh Quilt Co-op",
+    "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=60",
+    "description": "University volunteers stitch recycled quilts and fleece vests for Trishal char villages facing relentless cold snaps.",
+    "status": "Fundraising",
+    "contactInfo": "+880 1677-332299",
+    "division": "Mymensingh",
+    "collectionPoints": ["Ananda Mohan College Gate", "Trishal Youth Hub"],
+    "needs": ["Fleece Fabric", "Thread Cones", "Vest Zippers"]
+  },
+  {
+    "id": 9,
+    "title": "Bogura Highway Thermal Stop",
+    "image": "https://images.unsplash.com/photo-1500534314213-5d3515b7c795?auto=format&fit=crop&w=1200&q=60",
+    "description": "Night canteens on the Bogura highway hand out soup along with socks, ear muffs, and windproof jackets to drivers on duty.",
+    "status": "Active",
+    "contactInfo": "+880 1771-883344",
+    "division": "Bogura",
+    "collectionPoints": ["Shajahanpur Highway Inn", "Charmatha Truck Stop"],
+    "needs": ["Wool Socks", "Ear Muffs", "Windproof Jackets"]
+  },
+  {
+    "id": 10,
+    "title": "Jessore Border Glow",
+    "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60",
+    "description": "Migrant families crossing Benapole require ready-to-wear shawls, baby caps, and insulated leggings while waiting overnight.",
+    "status": "Urgent",
+    "contactInfo": "+880 1922-774488",
+    "division": "Jessore",
+    "collectionPoints": ["Benapole Transit Booth", "Jessore Rail Yard"],
+    "needs": ["Ready Shawls", "Baby Caps", "Insulated Leggings"]
+  },
+  {
+    "id": 11,
+    "title": "Cumilla Transit Warmth",
+    "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=60",
+    "description": "Bus terminals distribute travel blankets, mufflers, and thermal leggings to commuters stranded overnight by fog delays.",
+    "status": "Active",
+    "contactInfo": "+880 1919-221144",
+    "division": "Cumilla",
+    "collectionPoints": ["Kandirpar Bus Depot", "Kotbari Transit Lounge"],
+    "needs": ["Travel Blankets", "Mufflers", "Thermal Leggings"]
+  },
+  {
+    "id": 12,
+    "title": "Cox's Bazar Salt Spray Layers",
+    "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60",
+    "description": "Cyclone shelters near Inani beach need quick-dry ponchos, fleece blankets, and insulated baby suits for displaced families.",
+    "status": "Urgent",
+    "contactInfo": "+880 1933-440055",
+    "division": "Cox's Bazar",
+    "collectionPoints": ["Teknaf Relief Jetty", "Sugandha Beach Camp"],
+    "needs": ["Quick-Dry Ponchos", "Fleece Blankets", "Insulated Baby Suits"]
+  }
+]
