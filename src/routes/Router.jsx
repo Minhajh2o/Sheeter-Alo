@@ -5,6 +5,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Campaigns from '../pages/Campaigns';
 import CampaignDetails from '../pages/CampaignDetails';
 import winterCampaigns from '../data/campaign.json';
+import ProtectedRoute from "./ProtectedRoute";
 
 
 const campaignDetailLoader = ({ params }) => {

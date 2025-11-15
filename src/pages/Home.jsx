@@ -1,6 +1,7 @@
 import HeroSlider from "../components/layout-components/HeroSlider";
 import SectionHeading from '../components/shared-components/SectionHeading';
 import MissionStats from '../components/home-components/MissionStats';
+import HowItWorksGrid from "../components/home-components/HowItWorksGrid";
 
 const Home = () => {
   return (
