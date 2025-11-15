@@ -3,7 +3,7 @@ import RootLayout from "../layout/RootLayout";
 import Home from '../pages/Home';
 import ErrorPage from "../pages/ErrorPage";
 import Campaigns from '../pages/Campaigns';
-import CampaignDetail from '../pages/CampaignDetail';
+import CampaignDetails from '../pages/CampaignDetails';
 import winterCampaigns from '../data/campaign.json';
 
 
@@ -28,7 +28,7 @@ const Router = createBrowserRouter([
         loader: campaignDetailLoader,
         element: (
           <ProtectedRoute>
-            <CampaignDetail />
+            <CampaignDetails />
           </ProtectedRoute>
         ),
       },
