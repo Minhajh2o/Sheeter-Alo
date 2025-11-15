@@ -1,13 +1,39 @@
-import { createBrowserRouter } from 'react-router';
-import RootLayout from '../layout/RootLayout';
-import ErrorPage from '../pages/ErrorPage';
+import { createBrowserRouter } from "react-router";
+import RootLayout from "../layout/RootLayout";
+import Home from '../pages/Home';
+import ErrorPage from "../pages/ErrorPage";
+import Campaigns from '../pages/Campaigns';
+import CampaignDetail from '../pages/CampaignDetail';
+import winterCampaigns from '../data/campaign.json';
+
+
+const campaignDetailLoader = ({ params }) => {
+    const campaign = winterCampaigns.find((item) => item.id === Number(params.id));
+    if (!campaign) {
+        throw new Response('Campaign not found', { status: 404 });
+    }
+    return campaign;
+};
 
 const Router = createBrowserRouter([
-    {
-        path: "/",
-        element: <RootLayout />,
-        errorElement: <ErrorPage />,
-    },
+  {
+    path: "/",
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "campaigns", element: <Campaigns /> },
+      {
+        path: "campaigns/:id",
+        loader: campaignDetailLoader,
+        element: (
+          <ProtectedRoute>
+            <CampaignDetail />
+          </ProtectedRoute>
+        ),
+      },
+    ],
+  },
 ]);
 
 export default Router;
