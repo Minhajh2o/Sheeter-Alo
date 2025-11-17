@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../provider/AuthProvider';
 import FrostButton from '../components/shared-components/FrostButton';
 
 const UpdateProfile = () => {

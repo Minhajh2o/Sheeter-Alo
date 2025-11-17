@@ -1,14 +1,15 @@
-import { Link, NavLink } from 'react-router';
-import { useState } from 'react';
-import { FaMoon, FaSun, FaBars } from 'react-icons/fa6';
-import FrostButton from '../shared-components/FrostButton';
-import { useAuth } from '../../context/AuthContext';
+import { Link, NavLink } from "react-router";
+import { useState } from "react";
+import { FaMoon, FaSun, FaBars } from "react-icons/fa6";
+import FrostButton from "../shared-components/FrostButton";
+import { useAuth } from "../../provider/AuthProvider";
+import { FaUser } from "react-icons/fa";
 
 const navLinks = [
-  { path: '/', label: 'Home' },
-  { path: '/campaigns', label: 'Donation Campaigns' },
-  { path: '/how-to-help', label: 'How to Help' },
-  { path: '/dashboard', label: 'Dashboard' },
+  { path: "/", label: "Home" },
+  { path: "/campaigns", label: "Donation Campaigns" },
+  { path: "/how-to-help", label: "How to Help" },
+  { path: "/dashboard", label: "Dashboard" },
 ];
 
 const Navbar = () => {
@@ -19,6 +20,8 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
 
+
+  // Menu items
   const menuItems = (
     <ul className="space-y-2 text-sm font-medium text-slate-100">
       {navLinks.map((link) => (
@@ -27,7 +30,9 @@ const Navbar = () => {
             to={link.path}
             className={({ isActive }) =>
               `block rounded-xl px-4 py-2 transition ${
-                isActive ? 'bg-sky-500/20 text-sky-100' : 'text-slate-200 hover:bg-white/10'
+                isActive
+                  ? "bg-sky-500/20 text-sky-100"
+                  : "text-slate-200 hover:bg-white/10"
               }`
             }
             onClick={closeMenu}
@@ -38,13 +43,33 @@ const Navbar = () => {
       ))}
       <li className="border-t border-white/10 pt-2">
         {user ? (
-          <button type="button" className="w-full rounded-xl bg-white/10 px-4 py-2 text-left" onClick={() => { logout(); closeMenu(); }}>
+          <button
+            type="button"
+            className="w-full rounded-xl bg-white/10 px-4 py-2 text-left"
+            onClick={() => {
+              logout();
+              closeMenu();
+            }}
+          >
             Log out
           </button>
         ) : (
-          <Link to="/login" className="block rounded-xl bg-white/10 px-4 py-2" onClick={closeMenu}>
-            Login
-          </Link>
+          <div className="space-y-2">
+            <Link
+              to="/login"
+              className="block rounded-xl bg-white/10 px-4 py-2"
+              onClick={closeMenu}
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="block rounded-xl bg-white/10 px-4 py-2"
+              onClick={closeMenu}
+            >
+              Register
+            </Link>
+          </div>
         )}
       </li>
     </ul>
@@ -53,9 +78,18 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-900/70 backdrop-blur-xl">
       <div className="navbar relative mx-auto p-4 text-white">
-        <Link to="/" className="navbar-start gap-2 flex-nowrap text-2xl font-bold tracking-tight text-sky-300 md:text-white lg:text-sky-300 xl:text-white">
-          Sheeter Alo <span className="hidden md:inline lg:hidden xl:inline text-sky-300">(শীতের আলো)</span>
+        {/* Title */}
+        <Link
+          to="/"
+          className="navbar-start gap-2 flex-nowrap text-2xl font-bold tracking-tight text-sky-300 md:text-white lg:text-sky-300 xl:text-white"
+        >
+          Sheeter Alo{" "}
+          <span className="hidden md:inline lg:hidden xl:inline text-sky-300">
+            (শীতের আলো)
+          </span>
         </Link>
+
+        {/* Navigation links & actions */}
         <nav className="navbar-center hidden gap-3 text-sm uppercase tracking-[0.2em] lg:flex">
           {navLinks.map((link) => (
             <NavLink
@@ -63,7 +97,9 @@ const Navbar = () => {
               to={link.path}
               className={({ isActive }) =>
                 `rounded-full px-4 py-2 transition ${
-                  isActive ? 'bg-sky-500/20 text-sky-100' : 'text-slate-200 hover:text-white'
+                  isActive
+                    ? "bg-sky-500/20 text-sky-100"
+                    : "text-slate-200 hover:text-white"
                 }`
               }
             >
@@ -71,6 +107,8 @@ const Navbar = () => {
             </NavLink>
           ))}
         </nav>
+
+        {/* Theme toggle & user menu */}
         <div className="navbar-end items-center gap-3">
           <button
             type="button"
@@ -80,12 +118,22 @@ const Navbar = () => {
           >
             {isLight ? <FaSun /> : <FaMoon />}
           </button>
+
+          {/* User profile and menu toggle */}
           <div className="flex items-center gap-3">
-            <img
-              src={user?.photoURL || 'https://i.ibb.co/1dC4sHn/avatar-placeholder.png'}
-              alt={user?.displayName || 'Profile'}
-              className="h-12 w-12 rounded-full border border-white/20 object-cover"
-            />
+            {user && (
+              user.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  alt={user.displayName || 'Profile'}
+                  className="h-12 w-12 rounded-full border border-white/20 object-cover"
+                />
+              ) : (
+                <FaUser className="h-12 w-12 rounded-full border border-white/20 p-2" />
+              )
+            )}
+
+            {/* Menu toggle button */}
             <button
               type="button"
               className="btn btn-circle border border-white/20 bg-white/10 text-white lg:hidden"
@@ -94,14 +142,24 @@ const Navbar = () => {
             >
               <FaBars />
             </button>
+
             {user ? (
-              <FrostButton onClick={logout} variant="ghost" className="hidden lg:inline-flex">
+              <FrostButton
+                onClick={logout}
+                variant="ghost"
+                className="hidden lg:inline-flex"
+              >
                 Log out
               </FrostButton>
             ) : (
-              <Link to="/login" className="hidden lg:inline-flex">
-                <FrostButton>Login</FrostButton>
-              </Link>
+              <div className="hidden items-center gap-2 lg:flex">
+                <Link to="/login">
+                  <FrostButton>Login</FrostButton>
+                </Link>
+                <Link to="/register">
+                  <FrostButton variant="ghost">Register</FrostButton>
+                </Link>
+              </div>
             )}
           </div>
         </div>

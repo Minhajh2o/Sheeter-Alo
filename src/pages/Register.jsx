@@ -14,7 +14,7 @@ import { PiUsersThreeDuotone } from 'react-icons/pi';
 import { LuHeartHandshake, LuSparkles, LuMapPin } from 'react-icons/lu';
 import FrostButton from '../components/shared-components/FrostButton';
 import AuthShowcase from '../components/layout-components/AuthShowcase';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../provider/AuthProvider';
 
 const Register = () => {
   const {

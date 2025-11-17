@@ -7,7 +7,7 @@ import { GiGloves } from 'react-icons/gi';
 import { BsThermometerSnow } from 'react-icons/bs';
 import FrostButton from '../components/shared-components/FrostButton';
 import AuthShowcase from '../components/layout-components/AuthShowcase';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../provider/AuthProvider';
 
 const Login = () => {
   const { login, googleLogin, setAuthPersistence } = useAuth();

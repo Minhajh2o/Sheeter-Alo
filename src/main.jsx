@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import 'animate.css/animate.min.css'
 import './index.css'
 import Router from './routes/Router'
-import AuthProvider from './context/AuthContext'
+import AuthProvider from './provider/AuthProvider'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

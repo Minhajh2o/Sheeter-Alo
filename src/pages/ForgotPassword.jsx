@@ -5,7 +5,7 @@ import { FaEnvelope, FaPaperPlane } from 'react-icons/fa6';
 import { MdOutlineLockReset } from 'react-icons/md';
 import FrostButton from '../components/shared-components/FrostButton';
 import AuthShowcase from '../components/layout-components/AuthShowcase';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../provider/AuthProvider';
 
 const ForgotPassword = () => {
   const { resetPassword, rememberedEmail } = useAuth();

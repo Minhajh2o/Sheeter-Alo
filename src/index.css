@@ -11,7 +11,7 @@
 body {
 	margin: 0;
 	min-height: 100vh;
-	background-image: url('https://i.ibb.co/dB1kSTV/snow-noise.png'); /* Replace with frosty noise texture */
+	background: linear-gradient(135deg, #082034 0%, #021427 50%, #001219 100%); /* Replace with frosty gradient color */
 	background-size: cover;
 	background-attachment: fixed;
 }
