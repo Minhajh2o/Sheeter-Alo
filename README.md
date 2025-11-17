@@ -1,21 +1,10 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
 <div align="center">
 
 # Sheeter Alo (শীতের আলো)
 
 _Winter clothing donation platform focused on Bangladesh’s coldest districts_
 
-[Live demo (coming soon)](#) · [Project brief](Sheeter%20Alo%20project%20details.txt)
+[Live demo (Firebase)](https://sheeter-alo.web.app) · [Live demo (Netlify)](https://sheeter-alo.netlify.app/)
 
 </div>
 
@@ -35,39 +24,82 @@ Sheeter Alo is a Vite + React SPA that unites donors, volunteers, and division c
 ## 🧱 Project Structure
 
 ```
-src/
-	components/
-		cards/            # Small UI cards combined into larger sections
-		layout-components # Navbar, Hero, Footer
-		shared-components # Buttons, headings, info chips
-	context/            # Firebase Auth provider
-	data/               # Static winter campaign JSON
-	layout/             # Page shells
-	pages/              # Route screens
-	routes/             # Router + protected route helper
-```
-
-## 🔐 Environment Variables
-
-Copy `.env.example` to `.env` and fill with your Firebase project credentials:
-
-```
-cp .env.example .env
-# edit .env with your Firebase keys
+Sheeter-Alo/
+├─ public/                  # Static assets + Netlify redirect rules
+├─ src/
+│  ├─ assets/               # Hero imagery + misc SVGs
+│  ├─ components/
+│  │  ├─ cards/             # Atomic cards (campaign, donation, impact)
+│  │  ├─ home-components/   # Landing sections composed from cards
+│  │  ├─ layout-components/ # Navbar, hero slider, footer, auth banner
+│  │  └─ shared-components/ # Reusable UI primitives (buttons, headings)
+│  ├─ config/               # Firebase client config
+│  ├─ data/                 # Static JSON + copy used by pages
+│  ├─ layout/               # Root layout shell
+│  ├─ pages/                # Route-level views (Home, Auth, Dashboard, etc.)
+│  ├─ provider/             # Auth context provider
+│  ├─ routes/               # Router + protected route wrapper
+│  ├─ index.css             # Global styles + Tailwind layers
+│  └─ main.jsx              # Vite entry point
+├─ dist/                    # Production build output (after `npm run build`)
+├─ firebase.json            # Firebase hosting configuration
+├─ package.json             # Scripts + dependencies
+└─ vite.config.js           # Vite + React plugin config
 ```
 
 ## 🚀 Getting Started
 
-```powershell
-npm install
-npm run dev
-```
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn package manager
+- Firebase account for authentication
 
-Additional scripts:
+### Installation
 
-- `npm run build` – production build via Vite.
-- `npm run preview` – preview the production bundle.
-- `npm run lint` – ESLint (flat config) validation.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Minhajh2o/Tango-Time.git
+   cd Tango-Time
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory:
+   ```env
+   VITE_apiKey=your_firebase_api_key
+   VITE_authDomain=your_firebase_auth_domain
+   VITE_projectId=your_firebase_project_id
+   VITE_storageBucket=your_firebase_storage_bucket
+   VITE_messagingSenderId=your_firebase_messaging_sender_id
+   VITE_appId=your_firebase_app_id
+   ```
+
+4. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+6. **Preview production build**
+   ```bash
+   npm run preview
+   ```
+
+## 📱 Responsive Breakpoints
+
+- **Mobile:** < 640px (sm)
+- **Small Tablet:** 640px+ (sm)
+- **Tablet:** 768px+ (md)
+- **Laptop:** 1024px+ (lg)
+- **Desktop:** 1280px+ (xl)
 
 ## 📦 Dependencies Snapshot
 
