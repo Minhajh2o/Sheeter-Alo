@@ -117,7 +117,11 @@ const Login = () => {
           <h1 className="text-3xl font-bold">Enter your credentials</h1>
           <p className="text-slate-200/80">Welcome back! Continue your Sheeter Alo mission.</p>
         </div>
+
+        {/* login form */}
         <form className="space-y-5" onSubmit={handleSubmit}>
+          
+          {/* Email field */}
           <label className="space-y-2 text-sm text-slate-100">
             <span className="text-xs font-semibold uppercase tracking-wide text-slate-300">Email</span>
             <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3 transition focus-within:border-sky-400">
@@ -135,6 +139,8 @@ const Login = () => {
             </div>
             {errors.email && <p className="text-xs text-red-300">{errors.email}</p>}
           </label>
+
+          {/* Password field */}
           <label className="space-y-2 text-sm text-slate-100">
             <span className="text-xs font-semibold uppercase tracking-wide text-slate-300">Password</span>
             <div className="relative">
@@ -151,6 +157,7 @@ const Login = () => {
                 required
                 placeholder="••••••••"
               />
+              {/* Toggle password visibility */}
               <button
                 type="button"
                 className="absolute inset-y-0 right-0 flex items-center pr-4 text-slate-200"
@@ -162,7 +169,9 @@ const Login = () => {
             </div>
             {errors.password && <p className="text-xs text-red-300">{errors.password}</p>}
           </label>
-          <div className="flex flex-wrap items-center justify-between text-sm text-slate-300">
+
+          {/* Remember me and Forgot password */}
+          <div className="flex flex-wrap items-center justify-between text-sm text-slate-300 mt-1">
             <label className="flex items-center gap-2">
               <input
                 type="checkbox"

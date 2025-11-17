@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router';
 import { useState } from 'react';
 import { FaMoon, FaSun, FaBars } from 'react-icons/fa6';
 import FrostButton from '../shared-components/FrostButton';
-// import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -12,7 +12,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  // const { user, logout } = useAuth();
+  const { user, logout } = useAuth();
   const [isLight, setIsLight] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -37,7 +37,7 @@ const Navbar = () => {
         </li>
       ))}
       <li className="border-t border-white/10 pt-2">
-        {/* {user ? (
+        {user ? (
           <button type="button" className="w-full rounded-xl bg-white/10 px-4 py-2 text-left" onClick={() => { logout(); closeMenu(); }}>
             Log out
           </button>
@@ -45,7 +45,7 @@ const Navbar = () => {
           <Link to="/login" className="block rounded-xl bg-white/10 px-4 py-2" onClick={closeMenu}>
             Login
           </Link>
-        )} */}
+        )}
       </li>
     </ul>
   );
@@ -82,8 +82,8 @@ const Navbar = () => {
           </button>
           <div className="flex items-center gap-3">
             <img
-              // src={user?.photoURL || 'https://i.ibb.co/1dC4sHn/avatar-placeholder.png'}
-              // alt={user?.displayName || 'Profile'}
+              src={user?.photoURL || 'https://i.ibb.co/1dC4sHn/avatar-placeholder.png'}
+              alt={user?.displayName || 'Profile'}
               className="h-12 w-12 rounded-full border border-white/20 object-cover"
             />
             <button
@@ -94,7 +94,7 @@ const Navbar = () => {
             >
               <FaBars />
             </button>
-            {/* {user ? (
+            {user ? (
               <FrostButton onClick={logout} variant="ghost" className="hidden lg:inline-flex">
                 Log out
               </FrostButton>
@@ -102,7 +102,7 @@ const Navbar = () => {
               <Link to="/login" className="hidden lg:inline-flex">
                 <FrostButton>Login</FrostButton>
               </Link>
-            )} */}
+            )}
           </div>
         </div>
         {isMenuOpen && (

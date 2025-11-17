@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router';
 import RootLayout from '../layout/RootLayout';
 import Home from '../pages/Home';
 import Campaigns from '../pages/Campaigns';
-import CampaignDetail from '../pages/CampaignDetail';
+import CampaignDetails from '../pages/CampaignDetails';
 import HowToHelp from '../pages/HowToHelp';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
@@ -12,6 +12,7 @@ import UpdateProfile from '../pages/UpdateProfile';
 import ErrorPage from '../pages/ErrorPage';
 import ProtectedRoute from './ProtectedRoute';
 import winterCampaigns from '../data/campaign.json';
+import CoachingCall from '../pages/CoachingCall';
 
 const campaignDetailLoader = ({ params }) => {
     const campaign = winterCampaigns.find((item) => item.id === Number(params.id));
@@ -34,11 +35,19 @@ const Router = createBrowserRouter([
                 loader: campaignDetailLoader,
                 element: (
                     <ProtectedRoute>
-                        <CampaignDetail />
+                        <CampaignDetails />
                     </ProtectedRoute>
                 ),
             },
             { path: 'how-to-help', element: <HowToHelp /> },
+            {
+                path: 'coaching-call',
+                element: (
+                    <ProtectedRoute>
+                        <CoachingCall />
+                    </ProtectedRoute>
+                ),
+            },
             {
                 path: 'dashboard',
                 element: (

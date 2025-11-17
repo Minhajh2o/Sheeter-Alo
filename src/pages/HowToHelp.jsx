@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import SectionHeading from '../components/shared-components/SectionHeading';
 import HowToHelpCard from '../components/cards/HowToHelpCard';
 import InfoChip from '../components/shared-components/InfoChip';
@@ -27,40 +28,46 @@ const resourceLinks = [
   'Division-wise WhatsApp coordinators list.',
 ];
 
-const HowToHelp = () => (
-  <div className="space-y-10">
-    <SectionHeading
-      eyebrow="Guide"
-      title="Layer kindness · Layer garments"
-      subtitle="From student clubs to garment factories, anybody can activate a winter drive in 24 hours."
-    />
+const HowToHelp = () => {
+  const navigate = useNavigate();
 
-    <div className="grid gap-6 md:grid-cols-3">
-      {helpIdeas.map((idea) => (
-        <HowToHelpCard key={idea.step} {...idea} />
-      ))}
-    </div>
+  return (
+    <div className="space-y-10">
+      <SectionHeading
+        eyebrow="Guide"
+        title="Layer kindness · Layer garments"
+        subtitle="From student clubs to garment factories, anybody can activate a winter drive in 24 hours."
+      />
 
-    <section className="grid gap-6 rounded-3xl border border-white/10 bg-slate-900/40 p-8 md:grid-cols-2">
-      <div className="space-y-4">
-        <h3 className="text-2xl font-semibold">Quick coordination stats</h3>
-        <div className="grid gap-4">
-          <InfoChip label="Pickup Vans" value="12 nightly" icon="🚐" />
-          <InfoChip label="City Drop Boxes" value="28 active" icon="📦" />
-          <InfoChip label="Division Leads" value="8" icon="🧭" />
+      <div className="grid gap-6 md:grid-cols-3">
+        {helpIdeas.map((idea) => (
+          <HowToHelpCard key={idea.step} {...idea} />
+        ))}
+      </div>
+
+      <section className="grid gap-6 rounded-3xl border border-white/10 bg-slate-900/40 p-8 md:grid-cols-2">
+        <div className="space-y-4">
+          <h3 className="text-2xl font-semibold">Quick coordination stats</h3>
+          <div className="grid gap-4">
+            <InfoChip label="Pickup Vans" value="12 nightly" icon="🚐" />
+            <InfoChip label="City Drop Boxes" value="28 active" icon="📦" />
+            <InfoChip label="Division Leads" value="8" icon="🧭" />
+          </div>
         </div>
-      </div>
-      <div className="space-y-4 rounded-2xl border border-white/5 bg-white/10 p-6">
-        <h4 className="text-lg font-semibold">Resources</h4>
-        <ul className="list-disc space-y-2 pl-5 text-sm text-slate-100">
-          {resourceLinks.map((resource) => (
-            <li key={resource}>{resource}</li>
-          ))}
-        </ul>
-        <FrostButton className="w-full md:w-auto">Book a coaching call</FrostButton>
-      </div>
-    </section>
-  </div>
-);
+        <div className="space-y-4 rounded-2xl border border-white/5 bg-white/10 p-6">
+          <h4 className="text-lg font-semibold">Resources</h4>
+          <ul className="list-disc space-y-2 pl-5 text-sm text-slate-100">
+            {resourceLinks.map((resource) => (
+              <li key={resource}>{resource}</li>
+            ))}
+          </ul>
+          <FrostButton className="w-full md:w-auto" onClick={() => navigate('/coaching-call')}>
+            Book a coaching call
+          </FrostButton>
+        </div>
+      </section>
+    </div>
+  );
+};
 
 export default HowToHelp;
