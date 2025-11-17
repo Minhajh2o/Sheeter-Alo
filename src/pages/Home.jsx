@@ -1,12 +1,14 @@
 import HeroSlider from "../components/layout-components/HeroSlider";
-import SectionHeading from '../components/shared-components/SectionHeading';
-import MissionStats from '../components/home-components/MissionStats';
+import SectionHeading from "../components/shared-components/SectionHeading";
+import MissionStats from "../components/home-components/MissionStats";
 import HowItWorksGrid from "../components/home-components/HowItWorksGrid";
-import winterCampaigns from '../data/campaign.json';
+import winterCampaigns from "../data/campaign.json";
 import FeaturedCampaignsGrid from "../components/home-components/FeaturedCampaignsGrid";
+import ImpactMetricsGrid from "../components/home-components/ImpactMetricsGrid";
+import DivisionSpotlight from '../components/home-components/DivisionSpotlight';
 
 const Home = () => {
-    const featuredCampaigns = winterCampaigns.slice(0, 3);
+  const featuredCampaigns = winterCampaigns.slice(0, 3);
 
   return (
     <div className="space-y-16">
@@ -33,7 +35,7 @@ const Home = () => {
         <HowItWorksGrid />
       </section>
 
-            {/* Featured campaigns */}
+      {/* Featured campaigns */}
       <section className="space-y-8">
         <SectionHeading
           eyebrow="Featured campaigns"
@@ -41,6 +43,20 @@ const Home = () => {
           subtitle="Every bundle you send lights up an entire bari (বাড়ি)."
         />
         <FeaturedCampaignsGrid campaigns={featuredCampaigns} />
+      </section>
+
+      {/* Impact metrics & Division spotlight */}
+      <section className="grid gap-6 rounded-3xl border border-sky-100/10 bg-slate-900/40 p-8 md:grid-cols-2">
+        <div className="space-y-6">
+          <SectionHeading
+            alignment="left"
+            eyebrow="Impact"
+            title="Tangible warmth metrics"
+            subtitle="Every number here is audited weekly with district coordinators."
+          />
+          <ImpactMetricsGrid />
+        </div>
+        <DivisionSpotlight />
       </section>
     </div>
   );
