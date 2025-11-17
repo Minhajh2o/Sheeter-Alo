@@ -36,8 +36,20 @@ const Router = createBrowserRouter([
         ),
       },
       { path: "how-to-help", element: <HowToHelp /> },
+      {
+        path: "update-profile",
+        element: (
+          <ProtectedRoute>
+            <UpdateProfile />
+          </ProtectedRoute>
+        ),
+      },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "forgot-password", element: <ForgotPassword /> },
     ],
   },
+  { path: "*", element: <ErrorPage /> },
 ]);
 
 export default Router;
