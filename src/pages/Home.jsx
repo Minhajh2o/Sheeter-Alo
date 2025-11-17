@@ -5,7 +5,7 @@ import HowItWorksGrid from "../components/home-components/HowItWorksGrid";
 import winterCampaigns from "../data/campaign.json";
 import FeaturedCampaignsGrid from "../components/home-components/FeaturedCampaignsGrid";
 import ImpactMetricsGrid from "../components/home-components/ImpactMetricsGrid";
-import DivisionSpotlight from '../components/home-components/DivisionSpotlight';
+import DivisionSpotlight from "../components/home-components/DivisionSpotlight";
 
 const Home = () => {
   const featuredCampaigns = winterCampaigns.slice(0, 3);
@@ -57,6 +57,16 @@ const Home = () => {
           <ImpactMetricsGrid />
         </div>
         <DivisionSpotlight />
+      </section>
+
+      {/* Volunteer stories */}
+      <section className="space-y-8 rounded-3xl border border-white/10 bg-sky-500/10 p-8 text-center text-white">
+        <SectionHeading
+          eyebrow="Volunteer stories"
+          title="Real voices from winter crews"
+          subtitle="Rotating testimonials from coordinators across Bangladesh"
+        />
+        <VolunteerStoriesSlider />
       </section>
     </div>
   );
