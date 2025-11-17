@@ -2,8 +2,12 @@ import HeroSlider from "../components/layout-components/HeroSlider";
 import SectionHeading from '../components/shared-components/SectionHeading';
 import MissionStats from '../components/home-components/MissionStats';
 import HowItWorksGrid from "../components/home-components/HowItWorksGrid";
+import winterCampaigns from '../data/campaign.json';
+import FeaturedCampaignsGrid from "../components/home-components/FeaturedCampaignsGrid";
 
 const Home = () => {
+    const featuredCampaigns = winterCampaigns.slice(0, 3);
+
   return (
     <div className="space-y-16">
       {/* Banner */}
@@ -27,6 +31,16 @@ const Home = () => {
           subtitle="Our micro-components keep the flow effortless so you can focus on generosity."
         />
         <HowItWorksGrid />
+      </section>
+
+            {/* Featured campaigns */}
+      <section className="space-y-8">
+        <SectionHeading
+          eyebrow="Featured campaigns"
+          title="Start with the most urgent drives"
+          subtitle="Every bundle you send lights up an entire bari (বাড়ি)."
+        />
+        <FeaturedCampaignsGrid campaigns={featuredCampaigns} />
       </section>
     </div>
   );
