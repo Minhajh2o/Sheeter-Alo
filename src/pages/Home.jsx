@@ -6,6 +6,7 @@ import winterCampaigns from "../data/campaign.json";
 import FeaturedCampaignsGrid from "../components/home-components/FeaturedCampaignsGrid";
 import ImpactMetricsGrid from "../components/home-components/ImpactMetricsGrid";
 import DivisionSpotlight from "../components/home-components/DivisionSpotlight";
+import VolunteerStoriesSlider from "../components/home-components/VolunteerStoriesSlider";
 
 const Home = () => {
   const featuredCampaigns = winterCampaigns.slice(0, 3);
